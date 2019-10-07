@@ -1,2 +1,5 @@
-# wifi-pineapple-demo
-Wireless Pineapple Demo
+# Wireless Pineapple Demo
+
+## DISCLAIMER
+
+## Purpose
