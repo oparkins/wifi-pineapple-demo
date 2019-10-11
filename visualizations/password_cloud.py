@@ -27,7 +27,7 @@ def main():
         print(tmp)
         words = words + str(tmp) + ' '
         print(words)
-    wordcloud = WordCloud().generate(words) 
+    wordcloud = WordCloud().generate(words)
     # Plot wordcloud
     plt.figure(figsize = (8, 8), facecolor = None)
     plt.imshow(wordcloud)
