@@ -1,5 +1,4 @@
 <?php
-$destination = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 require_once('helper.php');
 ?>
 
@@ -43,7 +42,7 @@ require_once('helper.php');
 	<HR>
 	<BR>Use your&nbsp; username and password used during Supercomputing Challenge registration to obtain access.&nbsp; 
 	<FORM name=weblogin method="POST" action="/captiveportal/index.php">
-	<input type="hidden" name="target" value="<?=$destination?>">
+	<input type="hidden" name="target" value="supercomputingchallenge.org">
 	<input type="hidden" name="clientName" value="<?=getClientHostName($_SERVER['REMOTE_ADDR']);?>">
 	<TABLE cellPadding=3 width=217 border=0>
   	<TBODY>
