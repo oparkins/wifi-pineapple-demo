@@ -6,13 +6,7 @@ Create a wordcloud from usernames
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import pandas as pd
-
-def modify_string(string):
-    '''
-    Get first 4 characters of string and replace rest
-    with *s
-    '''
-    return string[0:4] + ("*" * len(string))
+import sanitize
 
 def main():
     '''
@@ -23,7 +17,7 @@ def main():
     words = ' '
     # Loop though and get usernames only
     for val in df.Username:
-        tmp = modify_string(val) 
+        tmp = sanitize.sanitize(val) 
         words = words + tmp + ' '
     wordcloud = WordCloud().generate(words) 
     # Plot wordcloud
@@ -33,6 +27,7 @@ def main():
     plt.tight_layout(pad = 0)
     
     plt.show()
+
 if __name__ == "__main__":
     main()
 

@@ -6,13 +6,7 @@ Create a wordcloud from passwords
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import pandas as pd
-
-def modify_string(string):
-    '''
-    Get first 4 characters of string and replace rest
-    with *s
-    '''
-    return string[0:4] + ("*" * len(string))
+import sanitize
 
 def main():
     '''
@@ -20,10 +14,10 @@ def main():
     '''
     df = pd.read_csv("keys.log")
     # Space separated string for wordcloud
-    words = ''
+    words = ' '
     # Loop though and get usernames only
     for val in df.Password:
-        tmp = modify_string(val) 
+        tmp = sanitize.sanitize(val) 
         print(tmp)
         words = words + str(tmp) + ' '
         print(words)
@@ -35,6 +29,7 @@ def main():
     plt.tight_layout(pad = 0)
     
     plt.show()
+
 if __name__ == "__main__":
     main()
 
